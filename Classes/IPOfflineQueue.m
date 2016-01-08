@@ -1,3 +1,4 @@
+#import <UIKit/UIKit.h>
 #import "IPOfflineQueue.h"
 #import <dispatch/dispatch.h>
 #import "FMDatabase.h"
