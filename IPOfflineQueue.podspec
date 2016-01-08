@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.platform     = :ios, '5.0'
   s.name         = "IPOfflineQueue"
-  s.version      = "0.0.8"
+  s.version      = "0.0.9"
   s.summary      = "IPOfflineQueue is queue that stores its entries (called tasks) into SQLite (using fmdb)."
   s.homepage     = "https://github.com/shakkame/IPOfflineQueue"
 

@@ -1,3 +1,4 @@
+#import <UIKit/UIKit.h>
 #import "IPOfflineQueue.h"
 #import <dispatch/dispatch.h>
 #import "FMDatabase.h"
@@ -303,7 +304,7 @@ static NSMutableSet *_activeQueues = nil;
         FMResultSet *rs = [db executeQuery:[NSString stringWithFormat:@"SELECT taskid, params FROM %@ ORDER BY taskid", TABLE_NAME]];
         
         while ([rs next]) {
-            sqlite_uint64 taskId = [rs unsignedLongLongIntForColumnIndex:0];
+            unsigned long long int taskId = [rs unsignedLongLongIntForColumnIndex:0];
             NSData *blobData = [rs dataForColumnIndex:1];
             
             NSDictionary *userInfo = [self decodeTaskInfo:blobData];
@@ -524,7 +525,7 @@ static NSMutableSet *_activeQueues = nil;
 - (void)execute {
     [self.dbQueue inDatabase:^(FMDatabase *db) {
         
-        sqlite_uint64 taskId = 0;
+        unsigned long long int taskId = 0;
         NSData *blobData;
         unsigned long long int retry;
         
